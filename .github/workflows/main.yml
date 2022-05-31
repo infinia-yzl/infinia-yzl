@@ -69,6 +69,7 @@ jobs:
       - name: Spotify - Top tracks
         uses: lowlighter/metrics@latest
         with:
+          filename: metrics.plugin.music.top.svg
           token: NOT_NEEDED
           base: ""
           plugin_music: yes
