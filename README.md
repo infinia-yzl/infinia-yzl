@@ -1,7 +1,12 @@
 ![Metrics](/github-metrics.svg)
-![Calendar](/metrics.plugin.isocalendar.fullyear.svg)
-![Habits Charts](/metrics.plugin.habits.charts.svg)
+---
 ![Achievements](/metrics.plugin.achievements.compact.svg)
+---
+![Calendar](/metrics.plugin.isocalendar.fullyear.svg)
+---
+![Habits Charts](/metrics.plugin.habits.charts.svg)
 ![Habits Facts](/metrics.plugin.habits.facts.svg)
+---
 ![Languages](/metrics.plugin.languages.details.svg)
+---
 ![Music](/metrics.plugin.music.top.svg)
