@@ -1,12 +1,8 @@
-![Metrics](/github-metrics.svg)
+| ![Metrics](/github-metrics.svg) | ![Calendar](/metrics.plugin.isocalendar.fullyear.svg)
+| ![Achievements](/metrics.plugin.achievements.compact.svg) | ![Habits Charts](/metrics.plugin.habits.charts.svg)
+| ![Languages](/metrics.plugin.languages.details.svg)
+
 ---
-![Achievements](/metrics.plugin.achievements.compact.svg)
----
-![Calendar](/metrics.plugin.isocalendar.fullyear.svg)
----
-![Habits Charts](/metrics.plugin.habits.charts.svg)
-![Habits Facts](/metrics.plugin.habits.facts.svg)
----
-![Languages](/metrics.plugin.languages.details.svg)
----
+
+:musical_note: *Music while coding*  
 ![Music](/metrics.plugin.music.top.svg)
