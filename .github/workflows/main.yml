@@ -24,46 +24,6 @@ jobs:
           plugin_achievements_secrets: yes
           plugin_achievements_display: compact
           plugin_achievements_threshold: C
-      - name: Midly interesting facts
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.habits.facts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_facts: yes
-          plugin_habits_charts: no
-          config_timezone: Asia/Singapore
-      - name: Recent activity charts
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.habits.charts.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_habits: yes
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          config_timezone: Asia/Singapore
-      - name: Most used (with details)
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.languages.details.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_languages: yes
-          plugin_languages_ignored: >-
-            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
-            gnuplot, php
-          plugin_languages_details: bytes-size, percentage
-          plugin_languages_limit: 4
-      - name: Full-year calendar
-        uses: lowlighter/metrics@latest
-        with:
-          filename: metrics.plugin.isocalendar.fullyear.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
       - name: Spotify - Top tracks
         uses: lowlighter/metrics@latest
         with:
@@ -84,7 +44,7 @@ jobs:
           base: ""
           plugin_skyline: yes
           plugin_skyline_year: current_year
-          plugin_skyline_frames: 60
+          plugin_skyline_frames: 120
           plugin_skyline_quality: 1
           plugin_skyline_settings: |
             {
