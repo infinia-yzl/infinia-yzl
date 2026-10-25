@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://accounts.spotify.com; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Spotify Token Renewal</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Spotify token renewal</h1>
+    <p>Step 1 of 2. Paste the <strong>Client ID</strong> from the <a href="https://developer.spotify.com/dashboard" target="_blank" rel="noopener noreferrer">Spotify developer dashboard</a>, then continue to Spotify and click <strong>Agree</strong>.</p>
+    <label for="client-id">Client ID</label>
+    <input id="client-id" type="text" autocomplete="off" spellcheck="false" placeholder="32 hexadecimal characters">
+    <button id="connect" type="button">Continue to Spotify</button>
+    <p id="message" class="message" role="status"></p>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
