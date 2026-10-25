@@ -10,26 +10,36 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - uses: lowlighter/metrics@latest
+      # gh-metrics is the maintained fork of lowlighter/metrics (unmaintained since December 2023)
+      # Pinned to a commit and built from source, so that updates only happen when this SHA changes
+      - uses: gh-metrics/metrics@fee09759804eef7d236c6587e38f6044d74cf2a3
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+          use_prebuilt_image: no
           config_timezone: Asia/Singapore
+      # Each step below runs even if an earlier step failed, so one broken plugin does not block the others
       - name: Achievements (Compact display)
-        uses: lowlighter/metrics@latest
+        if: ${{ !cancelled() }}
+        uses: gh-metrics/metrics@fee09759804eef7d236c6587e38f6044d74cf2a3
         with:
           filename: metrics.plugin.achievements.compact.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          use_prebuilt_image: no
           base: ""
+          plugins_errors_fatal: yes
           plugin_achievements: yes
           plugin_achievements_secrets: yes
           plugin_achievements_display: compact
           plugin_achievements_threshold: C
       - name: Spotify - Top tracks
-        uses: lowlighter/metrics@latest
+        if: ${{ !cancelled() }}
+        uses: gh-metrics/metrics@fee09759804eef7d236c6587e38f6044d74cf2a3
         with:
           filename: metrics.plugin.music.top.svg
           token: NOT_NEEDED
+          use_prebuilt_image: no
           base: ""
+          plugins_errors_fatal: yes
           plugin_music: yes
           plugin_music_mode: top
           plugin_music_provider: spotify
@@ -37,11 +47,14 @@ jobs:
           plugin_music_time_range: short
           plugin_music_top_type: tracks
       - name: GitHub Skyline
-        uses: lowlighter/metrics@latest
+        if: ${{ !cancelled() }}
+        uses: gh-metrics/metrics@fee09759804eef7d236c6587e38f6044d74cf2a3
         with:
           filename: metrics.plugin.skyline.svg
           token: NOT_NEEDED
+          use_prebuilt_image: no
           base: ""
+          plugins_errors_fatal: yes
           plugin_skyline: yes
           plugin_skyline_year: current_year
           plugin_skyline_frames: 120
@@ -53,4 +66,3 @@ jobs:
               "wait": 4,
               "hide": ".github-corner, .footer-link, .buttons-options, .mobile-rotate, .display-info span:first-child"
             }
-
